@@ -21,7 +21,7 @@ export default function Create() {
 
         let isOk = true;
         console.log(name);
-        if (!name || !phoneNo) {
+        if (name.length <2 || phoneNo.length <2) {
             isOk = false;
         }
         if (isOk) {

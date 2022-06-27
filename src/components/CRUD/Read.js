@@ -26,7 +26,7 @@ export default function Read() {
     }
 
     return (
-        <div>
+        <div className='table'>
             <table>
                 <tbody>
                     <tr >
