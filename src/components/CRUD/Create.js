@@ -5,44 +5,56 @@ import Read from './Read';
 
 export default function Create() {
 
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
-    console.log(email,password);
+    const [name, setName] = useState(' ');
+    const [phoneNo, setPhoneNo] = useState(' ');
+    console.log(name, phoneNo);
 
-const handleEmail=(e)=>{
-    setEmail(e.target.value)
-}
+    const handleName = (e) => {
+        setName(e.target.value)
+    }
 
-const handlePassword=(e)=>{
-    setPassword(e.target.value)
-}
+    const handlePhoneNo = (e) => {
+        setPhoneNo(e.target.value)
+    }
 
-const CreateUser=()=>{
-    axios.post('https://62b736f8491a19c97af0a88f.mockapi.io/Crud',
-    {
-        email,
-        password
-    })
-alert("Successfull");
-}
+    const CreateUser = () => {
+
+        let isOk = true;
+        console.log(name);
+        if (!name || !phoneNo) {
+            isOk = false;
+        }
+        if (isOk) {
+            axios.post('https://62b736f8491a19c97af0a88f.mockapi.io/Crud',
+                {
+                    name,
+                    phoneNo
+                })
+            alert("Successfull");
+        }
+
+        else {
+            alert("Please Enter Name and Phone Number");
+        }
+    }
 
     return (
         <div className='container'>
             <div className='subcontainer'>
-                <div >
-                    <label>Email</label>
-                    <input placeholder='email' name="email" onChange={handleEmail} />
+                <div className='forms'>
+                    <label>Name</label>
+                    <input id="name" placeholder='Enter Your Name' style={name === "" ? { borderColor: "red" } : {}} name="name" onChange={handleName} />
                 </div>
                 <div>
-                    <label>Password</label>
-                    <input placeholder='Password' onChange={handlePassword} />
+                    <label>Phone</label>
+                    <input id="name" placeholder='Enter Your PhoneNo' style={phoneNo === "" ? { borderColor: "red" } : {}} onChange={handlePhoneNo} />
                 </div>
                 <div>
-                    <button onClick={CreateUser}>Create</button>
+                    <button onClick={CreateUser} className='btn'>Create</button>
                 </div>
-                </div>
-                <Read />
+            </div>
+            <Read />
         </div>
-        
+
     )
 }

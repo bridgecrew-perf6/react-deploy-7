@@ -31,8 +31,8 @@ export default function Read() {
                 <tbody>
                     <tr >
                         <th >Sno.</th>
-                        <th>Email</th>
-                        <th>Password</th>
+                        <th>Name</th>
+                        <th>PhoneNo</th>
                         <th>Update</th>
                         <th>Delete</th>
                     </tr>
@@ -40,10 +40,10 @@ export default function Read() {
                         return (
                             <tr key={id}>
                                 <td >{data.id}</td>
-                                <td>{data.email}</td>
-                                <td>{data.password}</td>
-                                <td><Link to='/update'>{<button onClick={()=>editUser(data.id)}>Update</button>}</Link></td>
-                                <td><button onClick={(e)=>deleteUser(data.id)}>Delete</button></td>
+                                <td>{data.name}</td>
+                                <td>{data.phoneNo}</td>
+                                <td><Link to='/update'>{<button className='upd-btn' onClick={()=>editUser(data.id)}>Update</button>}</Link></td>
+                                <td><button className='del-btn' onClick={(e)=>deleteUser(data.id)}>Delete</button></td>
                             </tr>
                         )
                     })}
@@ -55,6 +55,7 @@ export default function Read() {
             
             <div>
             </div>
+            <Link to='/task2'>{<button className='tsk-btn'>Task2</button>}</Link>
 
         </div>
     )

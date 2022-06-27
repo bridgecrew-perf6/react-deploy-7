@@ -1,25 +1,50 @@
+body{
+  background-color: aqua;
+}
 .main{
   display:flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 100%;
- 
 }
 
 .container{
   display:flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
-  flex-direction: column;
-
+  flex-direction: row;
+  margin-top: 20px;
 }
+
+.btn{
+  margin-left:90px;
+  /* margin-bottom: 0px; */
+  padding:8px 40px;
+background-color: rgb(40, 199, 194);
+border-radius: 5px;
+}
+
+@media only screen and (max-width: 800px){
+  .container{
+    flex-direction: column;
+  }
+  .subcontainer{
+    margin-bottom: 20px;
+    margin-top: 50px;
+  }
+  
+}
+
 .subcontainer{
-  border:1.5px solid black;
-  padding:28px;
+  border:1px solid black;
+  border-radius: 6px;
+  padding:30px 40px 38px;
   width: 304px;
   height: 135px;
+background-color: white;
 }
+
 label{
   display:block;
 
@@ -29,6 +54,18 @@ input{
   margin-bottom:15px;
   width: 100%;
   padding: 5px;
+  border:1px solid black;
+  border-radius: 4px;
+}
+input:hover{
+  box-shadow: 0px 0px 10px skyblue;
+}
+
+button{
+  border:1.5px solid grey;
+}
+button:hover{
+  background-color: white;
 }
 
 .read{
@@ -38,6 +75,7 @@ input{
 
 table{
 border-collapse:collapse ;
+background-color: white;
 }
 td,th{
   border:1px solid black;
@@ -51,6 +89,8 @@ td,th{
   color:rgb(188, 179, 179);
   
 }
+
+
 .sub-container{
   display:flex;
   flex-direction: row;
@@ -58,7 +98,6 @@ td,th{
 }
 
 .content{
-
   margin-left:-50px;
 }
 
@@ -81,4 +120,24 @@ h4{
 }
 .box:hover{
   border:1px solid grey;
+}
+
+.tsk-btn{
+  position: absolute;
+  top:20px;
+  right:10px;
+  padding:8px 60px;
+background-color: rgb(40, 199, 194);
+border-radius: 5px;
+}
+
+.del-btn{
+  background-color: red;
+  border-radius: 3px;
+  padding:5px 9px;
+}
+.upd-btn{
+  background-color: green;
+  border-radius: 3px;
+  padding:5px 9px;
 }
