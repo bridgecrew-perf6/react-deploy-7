@@ -1,12 +1,23 @@
-import logo from './logo.svg';
 import './App.css';
+import Create from './components/CRUD/Create'
+import Update from './components/CRUD/Update'
+import Comments from './components/Task2/Comments';
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes
+} from 'react-router-dom';
 
 function App() {
   return (
-    <div >
-      <h2>My name is khan and I am not a Terrorist</h2>
-      <p>hello world</p>
-    </div>
+    <Router>
+     <Routes>
+     <Route path='/*' element={<Create />} />
+     <Route path='/create' element={<Create/>} />
+        <Route path='/update' element={<Update />} />
+        <Route path='/task2' element={<Comments />}/>
+        </Routes>
+   </Router>
   );
 }
 
